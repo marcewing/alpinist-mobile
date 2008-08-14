@@ -1,0 +1,75 @@
+<!-- 
+	In all cases, everything works in Safari
+	spray doesn't work in iPhone
+	++ this is because spray.mov is not in proper format for iPhone
+	
+SRC="http://www.alpinist.com/media/web08s/spray-thumb.jpg"
+href="http://www.alpinist.com/media/web08s/spray.mov"
+
+SRC="http://www.alpinist.com/media/web08x/video_nanga-parbat-3-thumb.jpg"
+href="http://www.alpinist.com/media/web08x/video_nanga-parbat-3.mp4"
+
+	neither works on iPhone from localhost
+	++ this is because localhost doesn't support range requests
+
+SRC="http://www.alpinist.com/media/web08s/spray-thumb.jpg"
+href="http://localhost:3000/spray.mov"
+
+SRC="http://www.alpinist.com/media/web08x/video_nanga-parbat-3-thumb.jpg"
+href="http://localhost:3000/nanga.mp4"
+
+-->
+
+
+<EMBED
+SRC="http://www.alpinist.com/media/web08s/spray-thumb.jpg"
+href="http://www.marcewing.com/spray-new-iPhone.m4v"
+target="myself"
+scale="1"
+HEIGHT=105 WIDTH=146
+TYPE="video/quicktime"
+PLUGINSPAGE="http://www.apple.com/quicktime/download/"
+autoplay="false"
+/>
+
+<% if @test == 1 %>
+<!-- This works in safari -->
+<object type="video/quicktime" 
+		data="<%= @localmov -%>"
+		width="480" height="376">
+		<param name="controller" value="true" />
+		<param name="autoplay" value="false" />
+</object>
+
+<% elsif @test == 2 %>
+
+<!-- This one works in iPhone safari -->
+<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"
+	codebase="http://www.apple.com/qtactivex/qtplugin.cab"
+	width="480" height="376">
+	<param name="src" value="<%= @localmov -%>" />
+	<param name="controler" value="true" />
+	<param name="autoplay" value="false" />
+		<object type="video/quicktime" 
+			data="<%= @localmov -%>"
+			width="480" height="376">
+			<param name="controller" value="true" />
+			<param name="autoplay" value="false" />
+	</object>
+</object>
+
+<% else %>
+
+<!-- This doesn't seem to work in iPhone -->
+<EMBED
+SRC="<%= @movurl.sub(/\....$/, "") -%>-thumb.jpg"
+href="<%= @localmov -%>"
+target="myself"
+scale="1"
+HEIGHT=105 WIDTH=146
+TYPE="video/mp4"
+PLUGINSPAGE="http://www.apple.com/quicktime/download/"
+autoplay="false"
+/>
+
+<% end %>

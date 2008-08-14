@@ -1,0 +1,53 @@
+<h2>Alpinist TV (page <%= @indexpage %>)</h2>
+
+<div id="tvlinks">
+	<ul>
+	<% @videos.each do |a| %>
+		<li>
+			<h3><%= a[:name] %></h3>
+			
+			<div id="vidlink">
+				<% if @USE_VIDEO_PAGES %>
+					<%= link_to "<img src=\"#{a[:thumb]}\" />", 
+							:controller => 'tv', 
+							:action => 'video',
+							:id => a[:origpage] %>				
+				<% else %>
+					<EMBED
+					SRC="<%= a[:thumb] -%>"
+					href="<%= a[:mov] -%>"
+					target="myself"
+					scale="1"
+					HEIGHT=105 WIDTH=146
+					TYPE="video/quicktime"
+					PLUGINSPAGE="http://www.apple.com/quicktime/download/"
+					autoplay="false"
+					/>
+				<% end %>
+				<%= a[:desc] %>
+			</div>	
+		</li>
+	<% end %>
+	</ul>
+</div>
+
+
+<div class="nav">
+
+<div class="prevnext">
+<% if @nextpage %>
+	<%= link_to "Next", :controller => 'tv', :action => 'index', 
+						:id => @indexpage.to_i + 1 %>
+<% end %>
+
+<% if @prevpage %>
+	<%= link_to "Prev", :controller => 'tv', :action => 'index', 
+						:id => @indexpage.to_i - 1 %>
+<% end %>
+</div>
+
+<p></p>
+<div class="paginator">
+<%= @paginator %>
+</div>
+</div>

@@ -1,0 +1,3 @@
+
+module NewswireHelper
+end

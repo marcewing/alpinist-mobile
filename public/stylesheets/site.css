@@ -1,0 +1,87 @@
+h2 {
+	font-family: Arial, sans-serif;
+	font-size: 24px;
+	color: #666;
+	padding: 4px;
+	background-color: #ddd;
+	border: 2px solid #ccc;
+	text-align: center;
+}
+
+.article_image {
+	font-style: italic;
+	border: 1px double #7c7c7c;
+	padding: 3px;
+}
+
+#byline {
+	font-style: italic;
+	text-align: center;
+	margin-top: -10px;
+	margin-bottom: 7px;
+}
+
+.links ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.links li {
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.nav {
+	font-style: italic;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	color: #666;
+	padding: 4px;
+	background-color: #ddd;
+	border: 2px solid #ccc;
+	text-align: center;
+}
+
+.prevnext {
+	font-size: 18px;
+}
+.prevnext a {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.paginator a {
+	padding-left: 5px;
+	padding-right: 5px;	
+}
+
+#tvlinks ul {
+	list-style: none;
+	padding-left: 0;
+}
+#vidlink embed {
+	float: left;
+	margin-right: 5px;
+}
+#vidlink a {
+	float: left;
+	margin-right: 5px;
+}
+
+#tvlinks li {
+	clear: both;
+	background-color: #eee;
+	border: 1px solid #aaa;
+	overflow: hidden;
+	padding: 5px;
+	margin-top: 5px;
+}
+#tvlinks h3 {
+	margin-bottom: 05px;
+	margin-top: 0;
+}
+
+.vidpage {
+	font-style: italic;
+	text-align: center;
+}

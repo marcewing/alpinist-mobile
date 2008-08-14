@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<!--		<meta content="initial-scale=1.0" name="viewport"/> -->
+<!-- Strange workaround here, instead of the above, which doesn't work through iPhone rotation -->
+		<meta name="viewport" content="maximum-scale=0.6667,width=480"/>
+
+		<title><%= @title %></title>
+		<%= stylesheet_link_tag "site" %>
+	</head>
+
+	<body>
+		<div id="whole_page">
+<!--			<div id="header">origurl: <%= @origurl %></div> -->
+			<div id="content">
+				<%= @content_for_layout %>
+			</div>
+		</div>			
+	</body>
+</html>

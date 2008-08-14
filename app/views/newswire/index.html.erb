@@ -1,0 +1,32 @@
+<h2>Alpinist NewsWires (page <%= @indexpage %>)</h2>
+
+<div class="links">
+	<ul>
+	<% @articles.each do |a| %>
+		<li>
+			<%= link_to a[:title], 
+						:controller => 'newswire', 
+						:action => 'article',
+						:id => a[:ref] %>
+		</li>
+	<% end %>
+	</ul>
+</div>
+
+<div class="nav">
+<div class="prevnext">
+<% if @nextpage %>
+	<%= link_to "Next", :controller => 'newswire', :action => 'index', 
+						:id => @indexpage.to_i + 1 %>
+<% end %>
+
+<% if @prevpage %>
+	<%= link_to "Prev", :controller => 'newswire', :action => 'index', 
+						:id => @indexpage.to_i - 1 %>
+<% end %>
+</div>
+<p></p>
+<div class="paginator">
+<%= @paginator %>
+</div>
+</div>
