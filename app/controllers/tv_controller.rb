@@ -93,7 +93,7 @@ class TvController < ApplicationController
       
       ref = content[/(showQTMovie\(\s*\')(.+)(\',)/,2]
 
-      if ref =~ /mp4$/
+      if (ref =~ /mp4$/) or (ref =~ /m4v$/)
         @movie = "http://www.alpinist.com/#{ref}"
       else
         @movie = "http://s3.amazonaws.com/marcewing/" +
